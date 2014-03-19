@@ -1,0 +1,37 @@
+<h1>Listing members</h1>
+<%= button_to 'New Member', new_member_path, :method => :get, :class=>"menu" %>
+</br>
+
+<table class="tabla">
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Name</th>
+      <th>Lastname</th>
+      <th>Biography</th>
+      <th>Interest</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @members.each do |member| %>
+      <tr>
+        <td><%= image_tag member.image.url(:thumb) %></td>
+        <td><%= member.name %></td>
+        <td><%= member.lastName %></td>
+        <td><%= member.biography %></td>
+        <td><%= member.interest %></td>
+        <td><%= button_to 'Show', member, :method => :get, :class=>"show" %></td>
+        <td><%= button_to 'Edit', edit_member_path(member), :method => :get, :class=>"show" %></td>
+        <td><%= button_to 'Destroy', member, :class=>"destroy", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= button_to 'Menu', menus_path, :method => :get, :class=>"menu" %>

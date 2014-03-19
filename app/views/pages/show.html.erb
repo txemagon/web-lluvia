@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<!-- <p>
+  <strong>Titulo:</strong>
+  <%= @page.titulo %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @page.description %>
+</p>
+
+<p>
+  <strong>Link:</strong>
+  <%= @page.link %>
+</p>
+-->
+ <%= markdown @page.body %>
+<!--
+<p>
+  <strong>Parent:</strong>
+  <%= @page.parent_id %>
+</p>
+
+<p>
+  <strong>Tutorial:</strong>
+  <%= @page.tutorial %>
+</p> -->
+
+<%= link_to 'Edit', edit_page_path(@page) %> |
+<%= link_to 'Back', pages_path %>
+

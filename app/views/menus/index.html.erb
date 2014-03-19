@@ -1,0 +1,35 @@
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @menus.each do |menu| %>
+      <tr>
+        <td><%= link_to 'Show', menu %></td>
+        <td><%= link_to 'Edit', edit_menu_path(menu) %></td>
+        <td><%= link_to 'Destroy', menu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br><br><br>
+
+  <a class="button" href="http://localhost:3000/pages/new">New Page</a>&nbsp&nbsp
+  <a class="button" href="http://localhost:3000/users/new">New User</a>&nbsp&nbsp
+  <a class="button" href="http://localhost:3000/members/new">New Member</a>
+</br></br>
+  <a class="button" href="http://localhost:3000/pages">Listing Pages</a>&nbsp&nbsp
+  <a class="button" href="http://localhost:3000/users">Listing Users</a>&nbsp&nbsp
+  <a class="button" href="http://localhost:3000/members">Listing Members</a>
+</br></br>
+ 
+<!--<%= link_to 'New Menu', new_menu_path %>-->
+  <a id = "blog" href="http://localhost:3000/blog">Blog</a> 
+

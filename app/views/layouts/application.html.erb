@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LluviaWeb</title>
+  <%= stylesheet_link_tag "pages", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+  <script type="text/javascript" src="http://www.adamaat.es/src/lluvia.js"></script>
+ 
+</head>
+<body onload="bringLLuvia(200);">
+	<div id="login"
+>
+  <% if model_signed_in? %>
+  <%= current_model.email %>
+  <%= link_to "Sign_out", destroy_model_session_path, :method => :delete %>
+  <% else %>
+  <%= link_to "Sign_in", new_model_session_path %>
+  <% end %>
+  </div>
+
+<%= yield %>
+
+</body>
+</html>

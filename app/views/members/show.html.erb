@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+<%= image_tag @member.image.url(:medium) %>
+<p>
+  <strong>Name:</strong>
+  <%= @member.name %>
+</p>
+
+<p>
+  <strong>Lastname:</strong>
+  <%= @member.lastName %>
+</p>
+
+<p>
+  <strong>Biography:</strong>
+  <%= @member.biography %>
+</p>
+
+<p>
+  <strong>Interest:</strong>
+  <%= @member.interest %>
+</p>
+
+<%= link_to 'Edit', edit_member_path(@member) %> |
+<%= link_to 'Back', members_path %>
+

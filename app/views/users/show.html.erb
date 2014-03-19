@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<%= image_tag @user.image.url(:medium) %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Lastname:</strong>
+  <%= @user.lastName %>
+</p>
+
+<p>
+  <strong>Biography:</strong>
+  <%= @user.biography %>
+</p>
+
+<p>
+  <strong>Interests:</strong>
+  <%= @user.interests %>
+</p>
+
+<p>
+  <strong>Developer:</strong>
+  <%= @user.developer %>
+</p>
+
+<p>
+  <strong>Designer:</strong>
+  <%= @user.designer %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

@@ -1,0 +1,42 @@
+<h1>Listing users</h1>
+<%= button_to 'New User', new_user_path, :method => :get, :class=>"menu" %>
+
+</br>
+
+<table class="tabla">
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Name</th>
+      <th>Lastname</th>
+      <th>Biography</th>
+      <th>Interests</th>
+      <th>Developer</th>
+      <th>Designer</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= image_tag user.image.url(:thumb) %></td>
+        <td><%= user.name %></td>
+        <td><%= user.lastName %></td>
+        <td><%= user.biography %></td>
+        <td><%= user.interests %></td>
+        <td><%= user.developer %></td>
+        <td><%= user.designer %></td>
+        <td><%= button_to 'Show', user,:method => :get, :class=>"show" %></td>
+        <td><%= button_to 'Edit', edit_user_path(user),:method => :get, :class=>"show" %></td>
+        <td><%= button_to 'Destroy', user, :class=>"destroy", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= button_to 'Menu', menus_path, :method => :get, :class=>"menu" %>

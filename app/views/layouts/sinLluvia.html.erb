@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LluviaWeb</title>
+  <%= stylesheet_link_tag "menus", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+ 
+</head>
+<body>
+	<div id="login">
+    <% if model_signed_in? %>
+      <%= current_model.email %>
+      <%= button_to "Sign out", destroy_model_session_path, :id => "off", :method => :delete %>
+    <% else %>
+      <%= button_to "Sign in", new_model_session_path, :id => "on" %>
+    <% end %>
+  </div>
+  <div class="titulo">
+    <%= image_tag("lluviaLogo1.jpg", :height => '176', :width => '439') %>
+</div>
+<div id="cuerpo">
+<%= yield %>
+</div>
+</body>
+</html>

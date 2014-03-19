@@ -1,0 +1,39 @@
+<h1>Listing pages</h1>
+<%= button_to 'New Page', new_page_path, :class=>"menu",:method => :get %>
+</br>
+
+<table class="tabla">
+  <thead>
+    <tr>
+      <th>Titulo</th>
+      <th>Description</th>
+      <th>Link</th>
+      <th>Body</th>
+      <th>Parent</th>
+      <th>Tutorial</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pages.each do |page| %>
+      <tr>
+        <td><%= page.titulo %></td>
+        <td><%= page.description %></td>
+        <td><%= page.link %></td>
+        <td>...</td>
+        <td><%= page.parent_id %></td>
+        <td><%= page.tutorial %></td>
+        <td><%= button_to 'Show', page, :class=>"show", :method => :get %></td>
+        <td><%= button_to 'Edit', edit_page_path(page), :class=>"show", :method => :get %></td>
+        <td><%= button_to 'Destroy', page, :class=>"destroy", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= button_to 'Menu', menus_path, :class=>"menu", :method => :get%>
